@@ -24,7 +24,7 @@ app.use(express.json());
 app.use("/api/auth",authRouters);
 app.use("/api/messages",messageRoutes);
 
-if(process.env.NODE_ENv === "production"){
+if(process.env.NODE_ENV === "production"){
     app.use(express.static(path.join(__dirname,"../frontend/dist")));
 
     app.get("*",(req,res)=>{
